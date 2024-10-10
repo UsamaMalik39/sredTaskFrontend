@@ -1,0 +1,31 @@
+<div class="container">
+    <mat-toolbar color="primary">
+      <mat-icon>account_circle</mat-icon>
+      <span>GitHub Integration</span>
+    </mat-toolbar>
+  
+    <div class="center-content">
+      <mat-card>
+        <mat-card-content *ngIf="!isAuthenticated">
+          <h2>CONNECT SREDIO TO GITHUB</h2>
+          <button mat-raised-button color="primary" (click)="connectToGitHub()">CONNECT</button>
+        </mat-card-content>
+  
+        <mat-card-content *ngIf="isAuthenticated">
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <mat-icon color="primary">check_circle</mat-icon>
+                <span>Connected to GitHub as {{ githubUsername }}</span>
+              </mat-panel-title>
+              <mat-panel-description>
+                Connected on: {{ connectedDate | date:'shortDate' }}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <button mat-raised-button color="warn" (click)="removeIntegration()">REMOVE INTEGRATION</button>
+          </mat-expansion-panel>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+  

@@ -1,0 +1,32 @@
+.container {
+    text-align: center;
+    padding-top: 20px;
+  }
+  
+  .center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+  }
+  
+  mat-toolbar {
+    background-color: #24292e;
+    color: white;
+  }
+  
+  mat-icon {
+    margin-right: 10px;
+  }
+  
+  mat-card {
+    padding: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  button {
+    width: 100%;
+    margin-top: 20px;
+  }
+  
