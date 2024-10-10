@@ -1,32 +1,86 @@
 .container {
-    text-align: center;
-    padding-top: 20px;
-  }
-  
-  .center-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80vh;
-  }
-  
-  mat-toolbar {
-    background-color: #24292e;
-    color: white;
-  }
-  
-  mat-icon {
-    margin-right: 10px;
-  }
-  
-  mat-card {
-    padding: 20px;
-    max-width: 400px;
-    margin: 0 auto;
-  }
-  
-  button {
-    width: 100%;
-    margin-top: 20px;
-  }
-  
+  text-align: center;
+  padding-top: 20px;
+}
+
+mat-toolbar {
+  background-color: white !important;
+  color: black !important;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 64px;
+}
+
+.center-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+mat-icon {
+  margin-right: 10px;
+}
+
+mat-card {
+  padding: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: #ffffff;
+}
+
+button {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.status-panel {
+  margin-left: auto;
+  color: black;
+  box-shadow: none;
+  border: none;
+}
+
+.title {
+  margin-left: 8px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+mat-expansion-panel {
+  background-color: #ffffff;
+  box-shadow: none;
+  border: none;
+  min-height: 56px;
+}
+
+mat-expansion-panel-header {
+  background-color: #ffffff;
+  color: black;
+  border-bottom: 1px solid #e0e0e0;
+  height: 56px;
+  display: flex; 
+  align-items: center; 
+  position: relative; 
+}
+
+mat-expansion-panel-content {
+  background-color: #ffffff;
+  padding: 16px;
+  border: none;
+  min-height: 0; 
+}
+
+button.mat-raised-button {
+  margin-top: 10px;
+  width: 100%;
+  background-color: #ff5252;
+  color: white;
+}
+
+button.mat-raised-button:hover {
+  background-color: #ff1744;
+}

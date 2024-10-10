@@ -10,6 +10,7 @@ export class ConnectComponent implements OnInit {
   isAuthenticated = false;
   connectedDate: string = '';
   githubUsername: string = '';
+  isLoading: boolean = true;
 
   constructor(private authService: AuthService) {}
 
@@ -19,6 +20,7 @@ export class ConnectComponent implements OnInit {
 
   checkIntegrationStatus(): void {
     this.authService.checkStatus().subscribe((response: any) => {
+      this.isLoading= false;
       if (response.connected) {
         this.isAuthenticated = true;
         this.connectedDate = response.integrationDate;
