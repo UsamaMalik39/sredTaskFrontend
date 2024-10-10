@@ -1,31 +1,38 @@
 <div class="container">
   <mat-toolbar color="primary">
-    <mat-icon svgIcon="github" style="margin-right: 8px;"></mat-icon>
-    <span class="title" style="margin-right: 8px;">GitHub</span>
-    <mat-icon svgIcon="check" style="margin-right: 8px;"></mat-icon>
-    <mat-icon style="margin-right: 8px;">sync</mat-icon> 
-   
+    <mat-icon
+      svgIcon="github"
+      class="github-icon"
+      style="margin-right: 8px"
+    ></mat-icon>
+    <span class="title" style="margin-right: 8px">GitHub</span>
+    <mat-icon svgIcon="check" style="margin-right: 8px"></mat-icon>
+    <mat-icon style="margin-right: 8px">sync</mat-icon>
 
-    <span class="spacer"></span> 
+    <span class="spacer"></span>
 
     <mat-expansion-panel class="status-panel" *ngIf="isAuthenticated">
-      <mat-expansion-panel-header style="position: relative; margin-bottom: 0;">
+      <mat-expansion-panel-header style="position: relative; margin-bottom: 0">
         <mat-panel-title>
-          <span>Admin: Last Synced: {{ connectedDate | date:'short' }}</span>
+          <span>Admin: Last Synced: {{ connectedDate | date : "short" }}</span>
         </mat-panel-title>
         <mat-panel-description>
           <span>Sync Type: Full</span>
         </mat-panel-description>
       </mat-expansion-panel-header>
-      <button mat-raised-button color="primary" (click)="removeIntegration()">REMOVE</button>
+      <button mat-raised-button color="primary" (click)="removeIntegration()">
+        Remove Integration
+      </button>
     </mat-expansion-panel>
   </mat-toolbar>
 
   <div class="center-content" *ngIf="!isAuthenticated && !isLoading">
     <mat-card>
-      <mat-card-content >
-        <h2>CONNECT SREDIO TO GITHUB</h2>
-        <button mat-raised-button color="primary" (click)="connectToGitHub()">CONNECT</button>
+      <mat-card-content>
+        <button mat-raised-button color="primary" (click)="connectToGitHub()">
+          Connect
+        </button>
+        <h2 class="connect-heading">Connect Sredio to GitHub</h2>
       </mat-card-content>
     </mat-card>
   </div>

@@ -9,7 +9,21 @@ mat-toolbar {
   display: flex;
   align-items: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  height: 64px;
+  padding: 0 20px;
+}
+
+.github-icon {
+  margin-right: 10px;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 20px;
+  margin-right: auto;
+}
+
+.spacer {
+  flex-grow: 1;
 }
 
 .center-content {
@@ -19,15 +33,17 @@ mat-toolbar {
   height: 80vh;
 }
 
-mat-icon {
-  margin-right: 10px;
-}
-
 mat-card {
   padding: 20px;
   max-width: 400px;
   margin: 0 auto;
   background-color: #ffffff;
+  box-shadow: none;
+}
+
+mat-card-content h2 {
+  font-size: 16px;
+  margin-top: 10px;
 }
 
 button {
@@ -42,19 +58,9 @@ button {
   border: none;
 }
 
-.title {
-  margin-left: 8px;
-}
-
-.spacer {
-  flex: 1 1 auto;
-}
-
 mat-expansion-panel {
   background-color: #ffffff;
   box-shadow: none;
-  border: none;
-  min-height: 56px;
 }
 
 mat-expansion-panel-header {
@@ -62,16 +68,14 @@ mat-expansion-panel-header {
   color: black;
   border-bottom: 1px solid #e0e0e0;
   height: 56px;
-  display: flex; 
-  align-items: center; 
-  position: relative; 
+  display: flex;
+  align-items: center;
 }
 
 mat-expansion-panel-content {
   background-color: #ffffff;
   padding: 16px;
   border: none;
-  min-height: 0; 
 }
 
 button.mat-raised-button {
@@ -83,4 +87,11 @@ button.mat-raised-button {
 
 button.mat-raised-button:hover {
   background-color: #ff1744;
+}
+
+.connect-heading {
+  color: purple; 
+  font-size: 24px;
+  margin-top: 16px; 
+  margin-bottom: 0; 
 }
