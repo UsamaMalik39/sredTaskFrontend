@@ -20,4 +20,13 @@ export class AuthService {
   removeIntegration(): Observable<any> {
     return this.http.delete(`${this.baseUrl}/auth/remove`, { withCredentials: true });
   }
+
+  fetchOrganizationsAndRepos(): Observable<any> {
+    const token = localStorage.getItem('githubToken');
+    return this.http.get(`${this.baseUrl}/auth/organizations`, {
+      headers: {
+        Authorization: `token ${token}`
+      }
+    });
+  }
 }

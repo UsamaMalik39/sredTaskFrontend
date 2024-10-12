@@ -13,6 +13,7 @@ import { AppComponent } from './app.component';
 import { ConnectComponent } from './components/connect/connect.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DomSanitizer } from '@angular/platform-browser';
+import { AgGridModule } from 'ag-grid-angular';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { DomSanitizer } from '@angular/platform-browser';
     MatExpansionModule,
     MatCheckboxModule,
     MatCardModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AgGridModule
   ],
   providers: [],
   bootstrap: [AppComponent]
@@ -44,6 +46,10 @@ export class AppModule {
     this.matIconRegistry.addSvgIcon(
       'check',
       this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/check.svg')
+    );
+    this.matIconRegistry.addSvgIcon(
+      'download',
+      this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/download.svg')
     );
   }
  }
