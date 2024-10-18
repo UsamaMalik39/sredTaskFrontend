@@ -47,10 +47,12 @@
     <mat-card-header>
       <mat-card-title style="color: #3f51b5;">
         GitHub Projects
-        <mat-icon
-        svgIcon="download"
-        style="margin-right: 4px"
-      ></mat-icon>
+        <button mat-icon-button (click)="fetchIncludedReposInfo()">
+          <mat-icon
+              svgIcon="download"
+              style="margin-right: 4px"
+          ></mat-icon>
+      </button>
       </mat-card-title>
     </mat-card-header>
     <mat-card-content style="white-space: nowrap;"> 
@@ -59,12 +61,28 @@
       </p>
     </mat-card-content>
   </mat-card> 
-  <div *ngIf="isAuthenticated" class="content" style="padding: 10px;">
-    <ag-grid-angular
-      style="width: 100%; height: 100vh"
-      class="ag-theme-quartz"
-      [rowData]="rowData"
-      [columnDefs]="columnDefs"
-    />
+  <div *ngIf="isAuthenticated">
+    <div  class="content" style="padding: 10px;">
+      <ag-grid-angular
+        style="width: 100%;"
+        class="ag-theme-quartz"
+        [rowData]="rowData"
+        [columnDefs]="columnDefs"
+        [domLayout]="'autoHeight'"
+      />
+    </div>
+      <div *ngIf="repoInfoRowData && repoInfoRowData.length">
+        <h2 style="margin-left: 16px">Repository Stats</h2>
+        <ag-grid-angular
+        [columnDefs]="repoInfoColDefs"
+        [rowData]="repoInfoRowData"
+        [defaultColDef]="{ flex: 1, minWidth: 100 }"
+        [domLayout]="'autoHeight'"
+        class="ag-theme-quartz">
+      </ag-grid-angular>
+      </div>
   </div>
+ 
+   
+ 
 

@@ -29,4 +29,12 @@ export class AuthService {
       }
     });
   }
+  fetchRepositoryInfo(owner: string, repos: string[]): Observable<any> { 
+    const token = localStorage.getItem('githubToken');
+    return this.http.post(`${this.baseUrl}/auth/repo-info`, { owner, repos }, {
+      headers: {
+        Authorization: `token ${token}`
+      }
+    });
+  }
 }
